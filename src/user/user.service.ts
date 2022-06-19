@@ -25,13 +25,19 @@ export class UserService {
       user: user,
       role: role
     });
-
-    return user; 
+   
+    return this.userRepository.findOne({where: {id: user.id}, relations: ['userRoles', 'userRoles.role']}); 
   }
 
 
   async getAllUsers(): Promise<User[]>{
     const users = await this.userRepository.find({relations: ['userRoles']});
     return users;
+  }
+
+
+  async getUserByEmail(email: string): Promise<User>{
+    const user = await this.userRepository.findOne({where: {email: email}, relations: ['userRoles']});
+    return user;
   }
 }
