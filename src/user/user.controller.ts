@@ -30,7 +30,7 @@ export class UserController {
 
   @Roles('ADMIN')
   @UseGuards(RolesGuard)
-  @Get('ban')
+  @Post('ban')
   addBan(@Body() dto: BanUserDto) {
     return this.userService.addBan(dto);
   }
