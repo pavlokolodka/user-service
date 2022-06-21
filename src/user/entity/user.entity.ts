@@ -1,10 +1,7 @@
+import { Post } from "src/posts/entity/posts.entity";
 import { UserRoles } from "src/roles/entity/user-roles.entity";
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-interface IUserCreate {
-  email: string,
-  password: string
-}
 
 @Entity({name: 'users'})
 export class User {
@@ -31,4 +28,7 @@ export class User {
 
   @OneToMany(() => UserRoles, userRoles => userRoles.user)
   public userRoles!: UserRoles[];
+
+  @OneToMany(() => Post, posts => posts.user)
+  posts: Post[];
 }
