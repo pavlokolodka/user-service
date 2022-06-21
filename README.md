@@ -24,7 +24,9 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) API user service.
+
+---
 
 ## Installation
 
@@ -35,14 +37,8 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# docker
+$ docker-compose up
 ```
 
 ## Test
@@ -58,6 +54,24 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Documentation
+
+```
+http://localhost:3000/docs/
+```
+---
+## Tools & technologies
+
+* Node.js & npm
+* NestJS
+* Typescript
+* PostgreSQL & TypeORM
+* Docker
+* Swagger
+* JSON Web Token & authentication/authorization
+* Data validation
+* Creating and distributing static files
+---
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
